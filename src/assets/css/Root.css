@@ -1,0 +1,33 @@
+@import "Color.css";
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+h1, h4{
+    color: var(--secondary-color);
+}
+
+.display-1{
+    font-size: 40px;
+}
+
+.display-2 {
+    font-size: 32px;
+}
+
+.display-3 {
+    font-size: 20px;
+}
+
+.display-4 {
+    font-size: 14px;
+}

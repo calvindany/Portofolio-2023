@@ -1,0 +1,33 @@
+@import "Color.css";
+
+.nav {
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content:end;
+    height: 10vh;
+    padding-right: 20vh;
+    padding-left: 20vh;
+
+    position: fixed;
+    z-index: 99;
+    top: 0;
+}
+
+.nav .nav-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 8vh;
+    align-items: center;
+}
+
+.nav .nav-list .nav-link {
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+    color: var(--secondary-color);
+}
+
+.active {
+    color: var(--third-color) !important;
+}
