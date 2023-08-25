@@ -1,37 +1,91 @@
 .highlight {
-    color: var(--third-color);
+  color: var(--third-color);
 }
 
 .about-me {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 20vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20vh;
 }
 
 .about-me .social {
-    display: flex;
-    gap: 20px;
-    color: var(--secondary-color);
-    margin-top: 20px
+  display: flex;
+  gap: 20px;
+  color: var(--secondary-color);
+  margin-top: 20px;
 }
 
 .about-me .social div {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.tech-stack {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 0 20vh;
-    text-align: center;
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20vh;
+  text-align: center;
+}
+
+.tech-stack .tech-logo {
+  display: flex;
+  justify-content: center;
+  gap: 10vh;
+  width: 100%;
+  align-items: center;
+}
+
+.card {
+  border: solid var(--third-color);
+  width: 30vw;
+  padding: 25px;
+  text-align: left;
+  color: var(--secondary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.card .card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vh;
+}
+
+.list-experince {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+}
+
+.list-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  width: 100%;
+}
+
+.image-project {
+  position: relative;
+}
+
+.image-project:hover::after {
+  content: "";
+  background-color: black;
+  opacity: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
