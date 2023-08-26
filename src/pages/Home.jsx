@@ -12,6 +12,8 @@ import Express from "../assets/img/express.png";
 import MongoDb from "../assets/img/mongodb.png";
 
 import Batique from "../assets/img/batique.png";
+import StockEdgeApp from "../assets/img/stockedge-app.png";
+import Rozeline from "../assets/img/rozeline.png";
 
 export default function Home() {
   const techs = [
@@ -55,7 +57,7 @@ export default function Home() {
 
   const projects = [
     {
-      name: "Rozeline",
+      title: "Batique",
       opening:
         "An website-based application that provides information about various types of flora present in the Flower Garden of Penajam Paser Utara Regency, East Kalimantan.",
       generalDescription1:
@@ -73,7 +75,7 @@ export default function Home() {
       image: Batique,
     },
     {
-      name: "Rozeline",
+      title: "Stockedge-App",
       opening:
         "An website-based application that provides information about various types of flora present in the Flower Garden of Penajam Paser Utara Regency, East Kalimantan.",
       generalDescription1:
@@ -88,7 +90,25 @@ export default function Home() {
         "MySQL",
         "CodeIgniter",
       ],
-      image: Batique,
+      image: StockEdgeApp,
+    },
+    {
+      title: "Rozeline",
+      opening:
+        "An website-based application that provides information about various types of flora present in the Flower Garden of Penajam Paser Utara Regency, East Kalimantan.",
+      generalDescription1:
+        "This website application provides information about the various types of flora present in the Rozeline Flower Garden.",
+      generalDescription2:
+        "This website is collaboratively built within a team and I'm responsible for designing and creating the user interface of the pages.",
+      techUsed: [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Javascript",
+        "MySQL",
+        "CodeIgniter",
+      ],
+      image: Rozeline,
     },
   ];
 
@@ -175,11 +195,7 @@ export default function Home() {
         </h4>
         <div className="list-project">
           {projects.map((project, index) => (
-            <ImageProject
-              image={project.image}
-              imageName={project.name}
-              key={index}
-            />
+            <ImageProject data={project} key={index} />
           ))}
         </div>
       </section>
