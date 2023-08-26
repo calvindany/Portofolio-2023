@@ -7,6 +7,7 @@ import ImageProject from "../components/ImageProject";
 import { TechsData, Experiences, Projects } from "../assets/data/data";
 
 export default function Home() {
+
   return (
     <>
       <section className="about-me">
