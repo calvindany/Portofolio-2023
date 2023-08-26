@@ -19,6 +19,13 @@ export default function Project() {
           <img src={Rozeline} alt="" />
         </div>
       </section>
+
+      <section className="project-description">
+        <div className="general-description">
+          <h1 className="display-2 highlight">General Description</h1>
+        </div>
+        <div className="technology-used"></div>
+      </section>
     </>
   );
 }
