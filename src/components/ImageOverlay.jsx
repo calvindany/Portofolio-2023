@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ImageOverlay({ name }) {
   return (
     <>
@@ -9,3 +11,7 @@ export default function ImageOverlay({ name }) {
     </>
   );
 }
+
+ImageOverlay.propTypes = {
+  name: PropTypes.string,
+};

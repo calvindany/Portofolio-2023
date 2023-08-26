@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import "../assets/css/Home.css";
 import "../assets/css/Root.css";
-
-import { useNavigate } from "react-router-dom";
 
 import ImageOverlay from "./ImageOverlay";
 
@@ -20,3 +21,9 @@ export default function ImageProject({ image, name, index }) {
     </>
   );
 }
+
+ImageProject.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  index: PropTypes.number,
+};

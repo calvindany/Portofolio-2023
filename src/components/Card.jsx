@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Card({ title, period, description }) {
   return (
     <>
@@ -11,3 +13,9 @@ export default function Card({ title, period, description }) {
     </>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string,
+  period: PropTypes.string,
+  description: PropTypes.string,
+};
