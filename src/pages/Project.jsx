@@ -1,3 +1,24 @@
+import "../assets/css/Root.css";
+import "../assets/css/Project.css";
+
+import Rozeline from "../assets/img/rozeline.png";
+
 export default function Project() {
-  return <h1 style={{ color: "White" }}>Masuk</h1>;
+  return (
+    <>
+      <section className="project-header">
+        <div>
+          <h1 className="display-1">Rozeline</h1>
+          <h3 className="display-3">
+            An website-based application that provides information about various
+            types of flora present in the Flower Garden of Penajam Paser Utara
+            Regency, East Kalimantan.
+          </h3>
+        </div>
+        <div>
+          <img src="" alt="" />
+        </div>
+      </section>
+    </>
+  );
 }
