@@ -1,68 +1,90 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import GridLoader from "react-spinners/GridLoader";
+
 import "../assets/css/Root.css";
 import "../assets/css/Project.css";
 import "../assets/css/Home.css";
 
+import { Projects } from "../assets/data/data";
+
 import ImageProject from "../components/ImageProject";
 
-import Rozeline from "../assets/img/rozeline.png";
-import Rozeline2 from "../assets/img/rozeline2.png";
-import Rozeline3 from "../assets/img/rozeline3.png";
-
 export default function Project() {
+  const [id, setId] = useState();
+  const [projectInformation, setProjectInformation] = useState(null);
+  const searchParams = useLocation();
+  useEffect(() => {
+    setId(searchParams.search.split("=")[1]);
+  }, [searchParams]);
+
+  useEffect(() => {
+    setProjectInformation(Projects[id]);
+  }, [id]);
+
+  useEffect(() => {
+    console.log(projectInformation);
+  }, [projectInformation]);
   return (
     <>
-      <section className="project-header">
-        <div>
-          <h1 className="display-1 highlight">Rozeline</h1>
-          <h3 className="display-3">
-            An website-based application that provides information about various
-            types of flora present in the Flower Garden of Penajam Paser Utara
-            Regency, East Kalimantan.
-          </h3>
-        </div>
-        <div className="image-header">
-          <img src={Rozeline} alt="" />
-        </div>
-      </section>
-
-      <section className="project-description">
-        <div className="project-description-wrapper">
-          <div className="general-description">
-            <h1 className="display-2 highlight">General Description</h1>
-            <div className="description">
-              <p className="display-3">
-                This website application provides information about the various
-                types of flora present in the Rozeline Flower Garden.
-              </p>
-              <p className="display-3">
-                This website is collaboratively built within a team and I'm
-                responsible for designing and creating the user interface of the
-                pages.
-              </p>
+      {projectInformation ? (
+        <>
+          <section className="project-header">
+            <div>
+              <h1 className="display-1 highlight">{projectInformation.name}</h1>
+              <h3 className="display-3">{projectInformation.opening}</h3>
             </div>
-          </div>
-          <div className="technology-used">
-            <h1 className="display-2 highlight">Used Tech</h1>
-            <div className="list-tech display-4">
-              <p className="display-3">HTML 5</p>
-              <p className="display-3">CSS 3</p>
-              <p className="display-3">Bootstrap</p>
-              <p className="display-3">Javascript</p>
-              <p className="display-3">MySQL</p>
-              <p className="display-3">CodeIgniter</p>
+            <div className="image-header">
+              <img src={projectInformation.image[0]} alt="" />
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="project-overview">
-        <h1 className="display-2 highlight">Project Overview</h1>
-        <div className="list-overview">
-          <ImageProject image={Rozeline} />
-          <ImageProject image={Rozeline2} />
-          <ImageProject image={Rozeline3} />
+          <section className="project-description">
+            <div className="project-description-wrapper">
+              <div className="general-description">
+                <h1 className="display-2 highlight">General Description</h1>
+                <div className="description">
+                  <p className="display-3">
+                    {projectInformation.generalDescription1}
+                  </p>
+                  <p className="display-3">
+                    {projectInformation.generalDescription2}
+                  </p>
+                </div>
+              </div>
+              <div className="technology-used">
+                <h1 className="display-2 highlight">Used Tech</h1>
+                <div className="list-tech display-4">
+                  {projectInformation.techUsed.map((tech, index) => (
+                    <p className="display-3" key={index}>
+                      {tech}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="project-overview">
+            <h1 className="display-2 highlight">Project Overview</h1>
+            <div className="list-overview">
+              {projectInformation.image.map((image, index) => (
+                <ImageProject image={image} key={index} />
+              ))}
+            </div>
+          </section>
+        </>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "50px 64px",
+          }}
+        >
+          <GridLoader color="#372B22" />
         </div>
-      </section>
+      )}
     </>
   );
 }

@@ -4,94 +4,9 @@ import "../assets/css/Home.css";
 import Card from "../components/Card";
 import ImageProject from "../components/ImageProject";
 
-import Bootstrap from "../assets/img/bootstrap.png";
-import CSS from "../assets/img/css.png";
-import JS from "../assets/img/js.png";
-import NodeJS from "../assets/img/nodejs.png";
-import Express from "../assets/img/express.png";
-import MongoDb from "../assets/img/mongodb.png";
-
-import Batique from "../assets/img/batique.png";
+import { TechsData, Experiences, Projects } from "../assets/data/data";
 
 export default function Home() {
-  const techs = [
-    {
-      name: "Boostrap",
-      logo: Bootstrap,
-    },
-    { name: "CSS", logo: CSS },
-    { name: "JavaScript", logo: JS },
-    { name: "Node JS", logo: NodeJS },
-    { name: "Express JS", logo: Express },
-    { name: "MongoDB", logo: MongoDb },
-  ];
-
-  const experiences = [
-    {
-      title: "Kedaireka - Research Assistant",
-      period: "Sep 2022 - Dec 2022",
-      description:
-        "Creating an informational system that provides learning resources about various types of flora.",
-    },
-    {
-      title: "LepKom - Laboratory Asisstant",
-      period: "Mar 2022 - Present",
-      description:
-        "Creating an informational system that provides learning resources about various types of flora.",
-    },
-    {
-      title: "Bangkit Academy - Cloud Computing Student",
-      period: "Feb 2023 - Jul 2023",
-      description:
-        "Creating an informational system that provides learning resources about various types of flora.",
-    },
-    {
-      title: "Coding.ID - Coach Assistant",
-      period: "Feb 2023 - Present",
-      description:
-        "Creating an informational system that provides learning resources about various types of flora.",
-    },
-  ];
-
-  const projects = [
-    {
-      name: "Rozeline",
-      opening:
-        "An website-based application that provides information about various types of flora present in the Flower Garden of Penajam Paser Utara Regency, East Kalimantan.",
-      generalDescription1:
-        "This website application provides information about the various types of flora present in the Rozeline Flower Garden.",
-      generalDescription2:
-        "This website is collaboratively built within a team and I'm responsible for designing and creating the user interface of the pages.",
-      techUsed: [
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Javascript",
-        "MySQL",
-        "CodeIgniter",
-      ],
-      image: Batique,
-    },
-    {
-      name: "Rozeline",
-      opening:
-        "An website-based application that provides information about various types of flora present in the Flower Garden of Penajam Paser Utara Regency, East Kalimantan.",
-      generalDescription1:
-        "This website application provides information about the various types of flora present in the Rozeline Flower Garden.",
-      generalDescription2:
-        "This website is collaboratively built within a team and I'm responsible for designing and creating the user interface of the pages.",
-      techUsed: [
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Javascript",
-        "MySQL",
-        "CodeIgniter",
-      ],
-      image: Batique,
-    },
-  ];
-
   return (
     <>
       <section className="about-me">
@@ -140,7 +55,7 @@ export default function Home() {
           the foundation of my development process
         </h4>
         <div className="tech-logo">
-          {techs.map((tech, index) => (
+          {TechsData.map((tech, index) => (
             <img src={tech.logo} alt="" key={index} />
           ))}
         </div>
@@ -155,7 +70,7 @@ export default function Home() {
           significantly to my personal and professional growth.
         </h4>
         <div className="list-experince">
-          {experiences.map((experience, index) => (
+          {Experiences.map((experience, index) => (
             <Card
               title={experience.title}
               period={experience.period}
@@ -174,10 +89,11 @@ export default function Home() {
           I've worked on in the past.
         </h4>
         <div className="list-project">
-          {projects.map((project, index) => (
+          {Projects.map((project, index) => (
             <ImageProject
-              image={project.image}
-              imageName={project.name}
+              image={project.image[0]}
+              name={project.name}
+              index={index}
               key={index}
             />
           ))}
