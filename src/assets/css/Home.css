@@ -1,6 +1,4 @@
-.highlight {
-  color: var(--third-color);
-}
+@import "Color.css";
 
 .about-me {
   width: 100%;
