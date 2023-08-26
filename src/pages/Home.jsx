@@ -7,12 +7,11 @@ import ImageProject from "../components/ImageProject";
 import { TechsData, Experiences, Projects } from "../assets/data/data";
 
 export default function Home() {
-
   return (
     <>
       <section className="about-me">
         <h1 className="display-1">
-          Hi! I'm, <span className="highlight">Calvin Danyalson</span>
+          Hi! I&apos;m, <span className="highlight">Calvin Danyalson</span>
         </h1>
         <h4 className="display-3">
           A <span className="highlight">Web Developer</span> and willing to
@@ -85,9 +84,9 @@ export default function Home() {
       <section className="container projects">
         <h1 className="display-1 highlight">Projects</h1>
         <h4 className="display-3">
-          During my progression as a web developer, I've crafted a number of
-          web-based applications. Below is a compilation of the applications
-          I've worked on in the past.
+          During my progression as a web developer, I&apos;ve crafted a number
+          of web-based applications. Below is a compilation of the applications
+          I&apos;ve worked on in the past.
         </h4>
         <div className="list-project">
           {Projects.map((project, index) => (
