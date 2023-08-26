@@ -1,0 +1,93 @@
+@import "Color.css";
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10vw;
+  width: 100%;
+  height: 100vh;
+  padding: 0 20vh;
+  color: var(--secondary-color);
+}
+
+.image-header {
+  max-width: 30vw;
+  border-radius: 10px;
+}
+
+.image-header img {
+  width: 100%;
+  border: solid var(--third-color);
+  border-radius: 10px;
+}
+
+.project-description {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20vh;
+  color: var(--secondary-color);
+}
+
+.project-description .project-description-wrapper {
+  display: flex;
+  gap: 10vw;
+}
+
+.general-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40vw;
+}
+
+.general-description .description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.technology-used {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.technology-used .list-tech {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 20px;
+  width: 30vw;
+  height: 100%;
+}
+
+.technology-used .list-tech p {
+  background-color: #243881;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.project-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20vh;
+  min-height: 100vh;
+  width: 100%;
+  gap: 20px;
+}
+
+.project-overview .list-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}

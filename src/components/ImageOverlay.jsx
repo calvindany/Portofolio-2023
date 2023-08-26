@@ -1,9 +1,9 @@
-export default function ImageOverlay({ title }) {
+export default function ImageOverlay({ name }) {
   return (
     <>
       <div className="overlay">
         <div className="content">
-          <h1>{title}</h1>
+          <h1>{name}</h1>
         </div>
       </div>
     </>
