@@ -131,6 +131,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="container tech-stack">
         <h1 className="display-1 highlight">Technology Stack</h1>
         <h4 className="display-3">
@@ -144,6 +145,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       <section className="container experiences">
         <h1 className="display-1 highlight">Experiences</h1>
         <h4 className="display-3">
@@ -163,6 +165,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       <section className="container projects">
         <h1 className="display-1 highlight">Projects</h1>
         <h4 className="display-3">
