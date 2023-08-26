@@ -21,10 +21,34 @@ export default function Project() {
       </section>
 
       <section className="project-description">
-        <div className="general-description">
-          <h1 className="display-2 highlight">General Description</h1>
+        <div>
+          <div className="general-description">
+            <h1 className="display-2 highlight">General Description</h1>
+
+            <div className="description">
+              <p className="display-3">
+                This website application provides information about the various
+                types of flora present in the Rozeline Flower Garden.
+              </p>
+              <p className="display-3">
+                This website is collaboratively built within a team and I’m
+                responsible for designing and creating the user interface of the
+                pages.
+              </p>
+            </div>
+          </div>
+          <div className="technology-used">
+            <h1 className="display-2 highlight">Used Tech</h1>
+            <div className="list-tech display-4">
+              <p>HTML 5</p>
+              <p>CSS 3</p>
+              <p>Bootstrap</p>
+              <p>Javascript</p>
+              <p>MySQL</p>
+              <p>CodeIgniter</p>
+            </div>
+          </div>
         </div>
-        <div className="technology-used"></div>
       </section>
     </>
   );

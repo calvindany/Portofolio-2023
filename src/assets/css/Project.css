@@ -29,4 +29,24 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20vh;
+    color: var(--secondary-color)
+}
+
+.general-description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40vw;
+}
+
+.general-description .description {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.technology-used .list-tech{
+    display: flex;
+    gap: 20px;
+    height: 100%;
 }
