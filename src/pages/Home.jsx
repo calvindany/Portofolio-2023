@@ -97,7 +97,7 @@ export default function Home() {
         <div className="list-project">
           {Projects.map((project, index) => (
             <ImageProject
-              image={project.image[0]}
+              image={project.images[0].image}
               name={project.name}
               index={index}
               key={index}

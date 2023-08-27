@@ -6,10 +6,17 @@ import NodeJS from "../img/nodejs.png";
 import Express from "../img/express.png";
 import MongoDb from "../img/mongodb.png";
 
-import Batique from "../img/batique.png";
-import Rozeline from "../img/rozeline.png";
-import Rozeline2 from "../img/rozeline2.png";
-import Rozeline3 from "../img/rozeline3.png";
+import BatiqueLanding from "../img/Batique/landing.png";
+import BatiqueArtikel from "../img/Batique/artikel.png";
+import BatiqueGaleri from "../img/Batique/galeri.png";
+import BatiqueProfile from "../img/Batique/profile.png";
+import BatiqueTentang from "../img/Batique/tentang.png";
+import BatiqueLogin from "../img/Batique/login.png";
+import BatiqueRegister from "../img/Batique/register.png";
+
+import RozelineLanding from "../img/Rozeline/landing.png";
+import RozelineFlora from "../img/Rozeline/flora.png";
+import RozelineDetail from "../img/Rozeline/detail.png";
 
 const TechsData = [
   {
@@ -35,19 +42,19 @@ const Experiences = [
     title: "LepKom - Laboratory Asisstant",
     period: "Mar 2022 - Present",
     description:
-      "Creating an informational system that provides learning resources about various types of flora.",
+      "Conducting workshops and performing computer maintenance at Gunadarma University's laboratory.",
   },
   {
     title: "Bangkit Academy - Cloud Computing Student",
     period: "Feb 2023 - Jul 2023",
     description:
-      "Creating an informational system that provides learning resources about various types of flora.",
+      "Conducting a lesson about the cloud service features available on the Google Cloud Platform and the basics of backend application using HapiJS and ExpressJS.",
   },
   {
     title: "Coding.ID - Coach Assistant",
     period: "Feb 2023 - Present",
     description:
-      "Creating an informational system that provides learning resources about various types of flora.",
+      "Providing coaching on programming problems, starting from basic logic using the JavaScript programming language. Acting as a mentor for bootcamp participants to ensure they meet the requirements while working on the final project, as well as teaching the basics of becoming a fullstack engineer using the React.js and .NET Core framework.",
   },
 ];
 
@@ -60,15 +67,16 @@ const Projects = [
       "This website application provides information about the various types of flora present in the Rozeline Flower Garden.",
     generalDescription2:
       "This website is collaboratively built within a team and I'm responsible for designing and creating the user interface of the pages.",
-    techUsed: [
-      "HTML5",
-      "CSS3",
-      "Bootstrap",
-      "Javascript",
-      "MySQL",
-      "CodeIgniter",
+    techUsed: ["React JS", "Firebase"],
+    images: [
+      { title: "Landing Page", image: BatiqueLanding },
+      { title: "About Page", image: BatiqueTentang },
+      { title: "Article Page", image: BatiqueArtikel },
+      { title: "Galery Page", image: BatiqueGaleri },
+      { title: "Profile Page", image: BatiqueProfile },
+      { title: "Login Page", image: BatiqueLogin },
+      { title: "Register Page", image: BatiqueRegister },
     ],
-    image: [Batique],
   },
   {
     name: "Rozeline",
@@ -86,7 +94,11 @@ const Projects = [
       "MySQL",
       "CodeIgniter",
     ],
-    image: [Rozeline, Rozeline2, Rozeline3],
+    images: [
+      { title: "Landing Page", image: RozelineLanding },
+      { title: "Flora Galery Page", image: RozelineFlora },
+      { title: "Flora Detail Page", image: RozelineDetail },
+    ],
   },
 ];
 

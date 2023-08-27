@@ -19,7 +19,7 @@ export default function Navigation() {
           </div>
           <nav className="project-nav">
             <ul className="nav-list">
-              <li className="nav-link">
+              {/* <li className="nav-link">
                 <Link
                   to="project-header"
                   smooth={true}
@@ -30,7 +30,7 @@ export default function Navigation() {
                 >
                   General
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-link">
                 <Link
                   to="project-description"
@@ -61,7 +61,7 @@ export default function Navigation() {
       ) : (
         <nav className="nav">
           <ul className="nav-list">
-            <li className="nav-link">
+            {/* <li className="nav-link">
               <Link
                 to="about-me"
                 smooth={true}
@@ -72,7 +72,7 @@ export default function Navigation() {
               >
                 About Me
               </Link>
-            </li>
+            </li> */}
             <li className="nav-link">
               <Link
                 to="tech-stack"

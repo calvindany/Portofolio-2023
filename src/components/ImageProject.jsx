@@ -8,16 +8,22 @@ import ImageOverlay from "./ImageOverlay";
 
 export default function ImageProject({ image, name, index }) {
   const navigate = useNavigate();
-
   return (
     <>
-      <div
-        className="image-project"
-        onClick={() => navigate(`/project?id=${index}`)}
-      >
-        <img src={image} alt="" />
-        <ImageOverlay name={name} />
-      </div>
+      {index || index >= 0 ? (
+        <div
+          className="image-project"
+          onClick={() => navigate(`/project?id=${index}`)}
+        >
+          <img src={image} alt="" />
+          <ImageOverlay name={name} />
+        </div>
+      ) : (
+        <div className="image-project">
+          <img src={image} alt="" />
+          <ImageOverlay name={name} />
+        </div>
+      )}
     </>
   );
 }

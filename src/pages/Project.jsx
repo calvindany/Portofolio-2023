@@ -24,6 +24,12 @@ export default function Project() {
     setProjectInformation(Projects[id]);
   }, [id]);
 
+  // useEffect(() => {
+  //   if(projectInformation) {
+  //     setTimeout(() => ())
+  //   }
+  // })
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -37,9 +43,17 @@ export default function Project() {
               <h1 className="display-1 highlight">{projectInformation.name}</h1>
               <h3 className="display-3">{projectInformation.opening}</h3>
             </div>
-            <div className="image-header">
-              <img src={projectInformation.image[0]} alt="" />
-            </div>
+            <motion.div
+              animate={{ x: 60 }}
+              transition={{ delay: 0.1 }}
+              className="image-header"
+            >
+              <motion.img
+                whileHover={{ scale: 1.2 }}
+                src={projectInformation.images[0].image}
+                alt=""
+              />
+            </motion.div>
           </section>
 
           <section className="project-description" id="project-description">
@@ -59,9 +73,13 @@ export default function Project() {
                 <h1 className="display-2 highlight">Used Tech</h1>
                 <div className="list-tech display-4">
                   {projectInformation.techUsed.map((tech, index) => (
-                    <p className="display-3" key={index}>
+                    <motion.p
+                      whileHover={{ scale: 1.2 }}
+                      className="display-3"
+                      key={index}
+                    >
                       {tech}
-                    </p>
+                    </motion.p>
                   ))}
                 </div>
               </div>
@@ -71,8 +89,12 @@ export default function Project() {
           <section className="project-overview" id="project-overview">
             <h1 className="display-2 highlight">Project Overview</h1>
             <div className="list-overview">
-              {projectInformation.image.map((image, index) => (
-                <ImageProject image={image} key={index} />
+              {projectInformation.images.map((image, index) => (
+                <ImageProject
+                  image={image.image}
+                  name={image.title}
+                  key={index}
+                />
               ))}
             </div>
           </section>
@@ -82,10 +104,13 @@ export default function Project() {
           style={{
             display: "flex",
             justifyContent: "center",
-            margin: "50px 64px",
+            alignItems: "center",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
           }}
         >
-          <GridLoader color="#372B22" />
+          <GridLoader color="#F8F7F9" />
         </div>
       )}
     </motion.div>
