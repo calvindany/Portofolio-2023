@@ -1,4 +1,7 @@
 @import "Color.css";
+.active {
+  color: var(--third-color);
+}
 
 .nav {
   width: 100%;
@@ -8,7 +11,6 @@
   height: 10vh;
   padding-right: 20vh;
   padding-left: 20vh;
-
   position: fixed;
   z-index: 99;
   top: 0;
@@ -32,16 +34,31 @@
   opacity: 0.7;
 }
 
-.back-button {
-  position: absolute;
-  top: 0;
-  padding: 20px;
+.project-navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 20vh;
+  font-size: 20px;
+  width: 100%;
 }
 
-.back-button:hover {
+.project-navbar .back-button:hover {
   opacity: 0.7;
 }
 
-.active {
-  color: var(--third-color) !important;
+.project-navbar .project-nav .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vh;
+  list-style: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.project-navbar .project-nav .nav-list .nav-link:hover {
+  opacity: 0.7;
 }

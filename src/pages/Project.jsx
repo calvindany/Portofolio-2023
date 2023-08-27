@@ -17,15 +17,13 @@ export default function Project() {
   const searchParams = useLocation();
   useEffect(() => {
     setId(searchParams.search.split("=")[1]);
+    window.scrollTo(top);
   }, [searchParams]);
 
   useEffect(() => {
     setProjectInformation(Projects[id]);
   }, [id]);
 
-  useEffect(() => {
-    console.log(projectInformation);
-  }, [projectInformation]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -34,7 +32,7 @@ export default function Project() {
     >
       {projectInformation ? (
         <>
-          <section className="project-header">
+          <section className="project-header" id="project-header">
             <div>
               <h1 className="display-1 highlight">{projectInformation.name}</h1>
               <h3 className="display-3">{projectInformation.opening}</h3>
@@ -44,7 +42,7 @@ export default function Project() {
             </div>
           </section>
 
-          <section className="project-description">
+          <section className="project-description" id="project-description">
             <div className="project-description-wrapper">
               <div className="general-description">
                 <h1 className="display-2 highlight">General Description</h1>
@@ -70,7 +68,7 @@ export default function Project() {
             </div>
           </section>
 
-          <section className="project-overview">
+          <section className="project-overview" id="project-overview">
             <h1 className="display-2 highlight">Project Overview</h1>
             <div className="list-overview">
               {projectInformation.image.map((image, index) => (

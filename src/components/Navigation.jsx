@@ -8,10 +8,55 @@ export default function Navigation() {
   return (
     <>
       {location.pathname == "/project" ? (
-        <div className="back-button display-3">
-          <NavLink to="/" style={{ color: "#F8F7F9", textDecoration: "none" }}>
-            Back To Home
-          </NavLink>
+        <div className="project-navbar">
+          <div className="back-button">
+            <NavLink
+              to="/"
+              style={{ color: "#F8F7F9", textDecoration: "none" }}
+            >
+              Back To Home
+            </NavLink>
+          </div>
+          <nav className="project-nav">
+            <ul className="nav-list">
+              <li className="nav-link">
+                <Link
+                  to="project-header"
+                  smooth={true}
+                  spy={true}
+                  offset={-50}
+                  delay={10}
+                  activeClass="active"
+                >
+                  General
+                </Link>
+              </li>
+              <li className="nav-link">
+                <Link
+                  to="project-description"
+                  smooth={true}
+                  spy={true}
+                  offset={-50}
+                  delay={10}
+                  activeClass="active"
+                >
+                  Description
+                </Link>
+              </li>
+              <li className="nav-link">
+                <Link
+                  to="project-overview"
+                  smooth={true}
+                  spy={true}
+                  offset={-50}
+                  delay={10}
+                  activeClass="active"
+                >
+                  Project Overview
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       ) : (
         <nav className="nav">
