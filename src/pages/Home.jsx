@@ -53,29 +53,86 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container tech-stack" id="tech-stack">
-        <h1 className="display-1 highlight">Technology Stack</h1>
-        <h4 className="display-3">
+      <motion.section className="container tech-stack" id="tech-stack">
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+          }}
+          className="display-1 highlight"
+        >
+          Technology Stack
+        </motion.h1>
+        <motion.h4
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+          }}
+          className="display-3"
+        >
           This technology stack consists of a combination of programming
           languages, frameworks, libraries, and databases that collectively form
           the foundation of my development process
-        </h4>
-        <div className="tech-logo">
+        </motion.h4>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1.2 } },
+          }}
+          className="tech-logo"
+        >
           {TechsData.map((tech, index) => (
-            <img src={tech.logo} alt="" key={index} />
+            <motion.img
+              whileHover={{ scale: 1.2 }}
+              src={tech.logo}
+              alt=""
+              key={index}
+            />
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       <section className="container experiences" id="experiences">
-        <h1 className="display-1 highlight">Experiences</h1>
-        <h4 className="display-3">
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+          }}
+          className="display-1 highlight"
+        >
+          Experiences
+        </motion.h1>
+        <motion.h4
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+          }}
+          className="display-3"
+        >
           Throughout my life journey, I have participated in various events that
           have provided me with opportunities to develop myself in terms of both
           hard skills and soft skills. These experiences have contributed
           significantly to my personal and professional growth.
-        </h4>
-        <div className="list-experince">
+        </motion.h4>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1.2 } },
+          }}
+          className="list-experince"
+        >
           {Experiences.map((experience, index) => (
             <Card
               title={experience.title}
@@ -84,26 +141,69 @@ export default function Home() {
               key={index}
             />
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <section className="container projects" id="projects">
-        <h1 className="display-1 highlight">Projects</h1>
-        <h4 className="display-3">
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+          }}
+          className="display-1 highlight"
+        >
+          Projects
+        </motion.h1>
+        <motion.h4
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+          }}
+          className="display-3"
+        >
           During my progression as a web developer, I&apos;ve crafted a number
           of web-based applications. Below is a compilation of the applications
           I&apos;ve worked on in the past.
-        </h4>
-        <div className="list-project">
+        </motion.h4>
+        <motion.div
+          variants={{ hidden: {}, visible: {} }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{
+            // delayChildren: 0.1,
+            staggerChildren: 0.1,
+            type: "tween",
+          }}
+          className="list-project"
+        >
           {Projects.map((project, index) => (
-            <ImageProject
-              image={project.images[0].image}
-              name={project.name}
-              index={index}
+            <motion.div
               key={index}
-            />
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    duration: 1.4,
+                  },
+                },
+              }}
+            >
+              <ImageProject
+                image={project.images[0].image}
+                name={project.name}
+                index={index}
+                key={index}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </motion.div>
   );
