@@ -9,7 +9,7 @@ import { TechsData, Experiences, Projects } from "../assets/data/data";
 export default function Home() {
   return (
     <>
-      <section className="about-me">
+      <section className="about-me" id="about-me">
         <h1 className="display-1">
           Hi! I&apos;m, <span className="highlight">Calvin Danyalson</span>
         </h1>
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container tech-stack">
+      <section className="container tech-stack" id="tech-stack">
         <h1 className="display-1 highlight">Technology Stack</h1>
         <h4 className="display-3">
           This technology stack consists of a combination of programming
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container experiences">
+      <section className="container experiences" id="experiences">
         <h1 className="display-1 highlight">Experiences</h1>
         <h4 className="display-3">
           Throughout my life journey, I have participated in various events that
@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container projects">
+      <section className="container projects" id="projects">
         <h1 className="display-1 highlight">Projects</h1>
         <h4 className="display-3">
           During my progression as a web developer, I&apos;ve crafted a number

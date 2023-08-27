@@ -37,9 +37,9 @@
 .tech-stack .tech-logo {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10vh;
   width: 100%;
-  align-items: center;
 }
 
 .card {
