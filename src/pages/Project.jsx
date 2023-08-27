@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import GridLoader from "react-spinners/GridLoader";
 import { motion } from "framer-motion";
+import GridLoader from "react-spinners/GridLoader";
 
 import "../assets/css/Root.css";
 import "../assets/css/Project.css";
@@ -12,9 +12,10 @@ import { Projects } from "../assets/data/data";
 import ImageProject from "../components/ImageProject";
 
 export default function Project() {
+  const searchParams = useLocation();
+
   const [id, setId] = useState();
   const [projectInformation, setProjectInformation] = useState(null);
-  const searchParams = useLocation();
   useEffect(() => {
     setId(searchParams.search.split("=")[1]);
     window.scrollTo(top);
@@ -23,12 +24,6 @@ export default function Project() {
   useEffect(() => {
     setProjectInformation(Projects[id]);
   }, [id]);
-
-  // useEffect(() => {
-  //   if(projectInformation) {
-  //     setTimeout(() => ())
-  //   }
-  // })
 
   return (
     <motion.div
@@ -39,13 +34,25 @@ export default function Project() {
       {projectInformation ? (
         <>
           <section className="project-header" id="project-header">
-            <div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={{
+                hidden: { opacity: 0, y: -30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+              }}
+            >
               <h1 className="display-1 highlight">{projectInformation.name}</h1>
               <h3 className="display-3">{projectInformation.opening}</h3>
-            </div>
+            </motion.div>
+
             <motion.div
-              animate={{ x: 60 }}
-              transition={{ delay: 0.1 }}
+              initial="hidden"
+              whileInView="visible"
+              variants={{
+                hidden: { opacity: 0, y: -60 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+              }}
               className="image-header"
             >
               <motion.img
@@ -58,7 +65,15 @@ export default function Project() {
 
           <section className="project-description" id="project-description">
             <div className="project-description-wrapper">
-              <div className="general-description">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                variants={{
+                  hidden: { opacity: 0, y: -30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+                className="general-description"
+              >
                 <h1 className="display-2 highlight">General Description</h1>
                 <div className="description">
                   <p className="display-3">
@@ -68,8 +83,16 @@ export default function Project() {
                     {projectInformation.generalDescription2}
                   </p>
                 </div>
-              </div>
-              <div className="technology-used">
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                variants={{
+                  hidden: { opacity: 0, y: -60 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+                className="technology-used"
+              >
                 <h1 className="display-2 highlight">Used Tech</h1>
                 <div className="list-tech display-4">
                   {projectInformation.techUsed.map((tech, index) => (
@@ -82,21 +105,56 @@ export default function Project() {
                     </motion.p>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </section>
 
           <section className="project-overview" id="project-overview">
-            <h1 className="display-2 highlight">Project Overview</h1>
-            <div className="list-overview">
+            <motion.h1
+              initial="hidden"
+              whileInView="visible"
+              variants={{
+                hidden: { opacity: 0, y: -30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+              }}
+              className="display-2 highlight"
+            >
+              Project Overview
+            </motion.h1>
+            <motion.div
+              variants={{ hidden: {}, visible: {} }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{
+                // delayChildren: 0.1,
+                staggerChildren: 0.1,
+                type: "tween",
+              }}
+              className="list-overview"
+            >
               {projectInformation.images.map((image, index) => (
-                <ImageProject
-                  image={image.image}
-                  name={image.title}
+                <motion.div
                   key={index}
-                />
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                    },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        duration: 1,
+                      },
+                    },
+                  }}
+                >
+                  <ImageProject
+                    image={image.image}
+                    name={image.title}
+                    key={index}
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </section>
         </>
       ) : (
