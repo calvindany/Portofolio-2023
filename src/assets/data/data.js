@@ -1,4 +1,5 @@
 import Bootstrap from "../img/bootstrap.png";
+import HTML from "../img/html.png";
 import CSS from "../img/css.png";
 import JS from "../img/js.png";
 import NodeJS from "../img/nodejs.png";
@@ -15,6 +16,7 @@ const TechsData = [
     name: "Boostrap",
     logo: Bootstrap,
   },
+  { name: "HTMl", logo: HTML },
   { name: "CSS", logo: CSS },
   { name: "JavaScript", logo: JS },
   { name: "Node JS", logo: NodeJS },

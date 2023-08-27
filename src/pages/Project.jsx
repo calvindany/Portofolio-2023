@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import GridLoader from "react-spinners/GridLoader";
+import { motion } from "framer-motion";
 
 import "../assets/css/Root.css";
 import "../assets/css/Project.css";
@@ -26,7 +27,11 @@ export default function Project() {
     console.log(projectInformation);
   }, [projectInformation]);
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {projectInformation ? (
         <>
           <section className="project-header">
@@ -85,6 +90,6 @@ export default function Project() {
           <GridLoader color="#372B22" />
         </div>
       )}
-    </>
+    </motion.div>
   );
 }

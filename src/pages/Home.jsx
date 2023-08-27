@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import "../assets/css/Root.css";
 import "../assets/css/Home.css";
 
@@ -8,7 +10,11 @@ import { TechsData, Experiences, Projects } from "../assets/data/data";
 
 export default function Home() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <section className="about-me" id="about-me">
         <h1 className="display-1">
           Hi! I&apos;m, <span className="highlight">Calvin Danyalson</span>
@@ -99,6 +105,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }
