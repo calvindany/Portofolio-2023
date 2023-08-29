@@ -34,6 +34,32 @@ h4 {
   font-size: 20px;
 }
 
+.display-5 {
+  font-size: 18;
+}
+
 .highlight {
   color: var(--third-color);
+}
+
+@media (max-width: 991.98px) {
+  .display-1 {
+    font-size: 24px;
+  }
+
+  .display-2 {
+    font-size: 18px;
+  }
+
+  .display-3 {
+    font-size: 16px;
+  }
+
+  .display-4 {
+    font-size: 14px;
+  }
+
+  .display-5 {
+    font-size: 12px;
+  }
 }

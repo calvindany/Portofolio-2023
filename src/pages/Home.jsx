@@ -10,11 +10,7 @@ import { TechsData, Experiences, Projects } from "../assets/data/data";
 
 export default function Home() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <>
       <section className="about-me" id="about-me">
         <h1 className="display-1">
           Hi! I&apos;m, <span className="highlight">Calvin Danyalson</span>
@@ -68,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <motion.section className="container tech-stack" id="tech-stack">
+      <section className="container tech-stack" id="tech-stack">
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -111,9 +107,13 @@ export default function Home() {
             />
           ))}
         </motion.div>
-      </motion.section>
+      </section>
 
-      <section className="container experiences" id="experiences">
+      <section
+        className="container experiences"
+        id="experiences"
+        style={{ marginTop: "100px" }}
+      >
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -129,7 +129,7 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           variants={{
-            hidden: { opacity: 0, y: -30 },
+            hidden: { opacity: 0, y: -20 },
             visible: { opacity: 1, y: 0, transition: { duration: 1 } },
           }}
           className="display-3"
@@ -146,16 +146,18 @@ export default function Home() {
             hidden: { opacity: 0, y: -30 },
             visible: { opacity: 1, y: 0, transition: { duration: 1.2 } },
           }}
-          className="list-experince"
+          className="scroll-container"
         >
-          {Experiences.map((experience, index) => (
-            <Card
-              title={experience.title}
-              period={experience.period}
-              description={experience.description}
-              key={index}
-            />
-          ))}
+          <div className="list-experince">
+            {Experiences.map((experience, index) => (
+              <Card
+                title={experience.title}
+                period={experience.period}
+                description={experience.description}
+                key={index}
+              />
+            ))}
+          </div>
         </motion.div>
       </section>
 
@@ -220,6 +222,6 @@ export default function Home() {
           ))}
         </motion.div>
       </section>
-    </motion.div>
+    </>
   );
 }
